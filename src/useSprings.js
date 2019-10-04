@@ -21,7 +21,7 @@ export const useSprings = (length, props) => {
     }
     let ref
     return [
-      new Array(length).fill().map((_, i) => {
+      Array.from({ length }, (_, i) => {
         const ctrl = new Ctrl()
         const newProps = isFn ? callProp(props, i, ctrl) : props[i]
         if (i === 0) ref = newProps.ref
