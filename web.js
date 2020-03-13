@@ -317,6 +317,7 @@ const createAnimatedComponent = Component => {
 
 let active = false;
 const controllers = new Set();
+if (typeof window === 'undefined') setInterval(controllers.clear.bind(controllers), 1000)
 
 const update = () => {
   if (!active) return false;
